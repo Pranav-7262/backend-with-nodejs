@@ -1,0 +1,23 @@
+{
+  "name": "node-pranav",
+  "version": "1.0.0",
+  "description": "node + express tuturials..",
+  "homepage": "https://github.com/Pranav-7262/backend-with-nodejs#readme",
+  "bugs": {
+    "url": "https://github.com/Pranav-7262/backend-with-nodejs/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pranav-7262/backend-with-nodejs.git"
+  },
+  "license": "ISC",
+  "author": "Pranav Varpe",
+  "type": "commonjs",
+  "main": " ",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
