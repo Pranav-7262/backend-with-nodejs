@@ -12,8 +12,14 @@
   },
   "license": "ISC",
   "author": "Pranav Varpe",
-  "type": "commonjs",
+  "contributors": [
+    {
+      "name": "Pranav Varpe",
+      "email": "varpepranav8@gmail.com"
+    }
+  ],
   "main": " ",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
