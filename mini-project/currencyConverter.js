@@ -31,10 +31,12 @@ https.get(URL, (res) => {
           const rate = rates[currency.toUpperCase()];
           if (rate) {
             console.log(
-              `${amount} USD approxiamately ${convertCurrency(
-                amount,
-                rate
-              )} ${currency.toUpperCase()}`
+              chalk.blue.bgRed.bold(
+                ` ${amount} USD approxiamately ${convertCurrency(
+                  amount,
+                  rate
+                )} ${currency.toUpperCase()}`
+              )
             );
           } else {
             console.log("Invalid currency code");
