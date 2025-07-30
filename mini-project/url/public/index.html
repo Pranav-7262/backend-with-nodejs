@@ -24,14 +24,53 @@
     </div>
 
     <script>
+      const fetchShortenURL = async () => {
+        try {
+          const res = await fetch("/links");
+          const links = await res.json();
+          console.log("links :", links);
+
+          const list = document.querySelector("#shortened-urls");
+          list.innerHTML = "";
+
+          for (const [shortCode, url] of Object.entries(links)) {
+            const li = document.createElement("li");
+            li.innerHTML = `<a href="/${shortCode}" target="_black">
+            ${window.location.origin}/${shortCode}</a> - ${url}`;
+            list.append(li);
+          }
+        } catch (error) {
+          console.error(error);
+        }
+      };
       const form = document.querySelector("#shorten-form");
-      form.addEventListener("submit", (event) => {
+      form.addEventListener("submit", async (event) => {
         event.preventDefault();
         const formData = new FormData(event.target);
         const url = formData.get("url");
-        const ShortCode = formData.get("ShortCode");
-        console.log(url, ShortCode);
+        const shortCode = formData.get("ShortCode");
+        // console.log(url, shortCode);
+
+        try {
+          const response = await fetch("/shorten", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ url, shortCode }),
+          });
+          if (response.ok) {
+            fetchShortenURL();
+            alert("form submitted successfully !");
+            event.target.reset();
+          } else {
+            const msg = await response.text();
+            alert(msg);
+          }
+        } catch (error) {
+          console.log(error);
+        }
       });
+
+      fetchShortenURL();
     </script>
   </body>
 </html>
