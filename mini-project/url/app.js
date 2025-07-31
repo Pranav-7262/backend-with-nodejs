@@ -43,6 +43,16 @@ const server = createServer(async (req, res) => {
       const links = await loadLinks();
       res.writeHead(200, { "Content-Type": "application/json" });
       return res.end(JSON.stringify(links));
+    } else {
+      const links = await loadLinks();
+      const shortCode = req.url.slice(1);
+      console.log("req :", req.url);
+      if (links[shortCode]) {
+        res.writeHead(302, { location: links[shortCode] });
+        return res.end();
+      }
+      res.writeHead(400, { "Content-Type": "text/plain" });
+      return res.end("URL is not found !");
     }
   }
 
