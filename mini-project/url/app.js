@@ -45,7 +45,9 @@ const server = createServer(async (req, res) => {
       return res.end(JSON.stringify(links));
     } else {
       const links = await loadLinks();
+
       const shortCode = req.url.slice(1);
+      console.log("links :", links);
       console.log("req :", req.url);
       if (links[shortCode]) {
         res.writeHead(302, { location: links[shortCode] });
