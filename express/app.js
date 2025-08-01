@@ -27,7 +27,7 @@ app.get("/contact", (req, res) => {
     `);
 });
 
-const PORT = 3004;
+const PORT = process.env.PORT || 3004;
 app.listen(PORT, () => {
   console.log(`Running on port ${PORT}`);
 });
