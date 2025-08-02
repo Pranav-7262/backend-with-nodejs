@@ -14,7 +14,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  padding: 40px 20px;
+  padding: 50px 30px;
 }
 
 /* Container Styling */
@@ -25,6 +25,8 @@ body {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 500px;
+  max-height: 90vh; /* Limit container height */
+  overflow-y: auto; /* Scroll if content overflows */
 }
 
 /* Headings */
@@ -81,12 +83,36 @@ button[type="submit"]:hover {
 #shortened-urls {
   list-style-type: none;
   padding-left: 0;
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 #shortened-urls li {
   background-color: #e8f0fe;
-  padding: 10px;
-  margin-bottom: 8px;
+  padding: 15px;
   border-radius: 4px;
-  word-break: break-all;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .container {
+    padding: 20px;
+    max-height: 95vh;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  button[type="submit"] {
+    font-size: 15px;
+  }
 }
