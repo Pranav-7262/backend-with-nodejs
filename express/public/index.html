@@ -4,12 +4,30 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DEMO</title>
+    <!-- <link rel="stylesheet" href="style.css" /> -->
   </head>
   <body>
-    <h1>Hi how are you !!</h1>
+    <!-- <h1 id="name">Hi how are you !!</h1>
     <hr />
-    <div>
-      <p>have a nice day okay!!</p>
-    </div>
+    <div class="main">
+      <p id="para">have a nice day okay!!</p>
+    </div> -->
+
+    <form action="/contact" method="post">
+      <div>
+        <label for="name">Name</label>
+        <input type="text" name="user[name]" id="name" required />
+      </div>
+      <div>
+        <label for="message">Message</label>
+        <textarea
+          name="user[message]"
+          id="message"
+          placeholder="write your msg here !"
+          required
+        ></textarea>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
   </body>
 </html>

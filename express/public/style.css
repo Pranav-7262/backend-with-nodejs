@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+#name {
+  font-weight: 600;
+  color: aqua;
+  background-color: blueviolet;
+}
+.name {
+  padding: 2rem;
+}
+#para {
+  text-align: center;
+  font-style: italic;
+}
