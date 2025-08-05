@@ -1,0 +1,118 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 50px 30px;
+}
+
+/* Container Styling */
+.container {
+  background-color: #fff;
+  padding: 30px 40px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  max-height: 90vh; /* Limit container height */
+  overflow-y: auto; /* Scroll if content overflows */
+}
+
+/* Headings */
+h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 20px;
+  margin-top: 30px;
+  border-top: 1px solid #ddd;
+  padding-top: 15px;
+}
+
+/* Form Styling */
+form div {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+input[type="url"],
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background-color: #4caf50;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+/* Shortened URLs list */
+#shortened-urls {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#shortened-urls li {
+  background-color: #e8f0fe;
+  padding: 15px;
+  border-radius: 4px;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .container {
+    padding: 20px;
+    max-height: 95vh;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  button[type="submit"] {
+    font-size: 15px;
+  }
+}
