@@ -20,8 +20,16 @@
         <button type="submit">Shorten</button>
       </form>
       <h2>Shortened URLs</h2>
-      <ul>
-        {{shortened_urls}}
+      
+        <% Object.entries(links).map(([ShortCode , url]) => {%> <% const short =
+        url.length >= 25 ? `${url.slice(0,30)}.....` : url %>
+        <li>
+          <a href="/<%= ShortCode %>" target="_blank">
+            <%= hosts %>/<%= ShortCode %>
+          </a>
+          - <%= short %>
+        </li>
+        <% }) %>
       </ul>
     </div>
   </body>
