@@ -31,6 +31,7 @@ const handleInput = (option) => {
   } else if (option === "3") {
     while (todos.length !== 0) {
       todos.pop();
+      ``;
     }
     console.log("deleted all tasks");
     showMenu();
