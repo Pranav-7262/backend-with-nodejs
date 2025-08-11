@@ -34,7 +34,7 @@ app.get("/product", (req, res) => {
   // Query Parameter
   console.log(req.query); // { page: '2', limit: '10' }
   res.send(
-    `<h1>The user is looking for ${req.query.page} product and ${req.query.limit}</h1>` // using & operator we can merge more than one parameter
+    `<h1>The user is looking for ${req.query.search} product and ${req.query.limit}</h1>` // using & operator we can merge more than one parameter
   ); //product?page=2&limit=10
 });
 
