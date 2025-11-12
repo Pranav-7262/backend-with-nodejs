@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+
+    <!-- Font Icon -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/material-design-iconic-font@2.2.0/dist/css/material-design-iconic-font.min.css"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Arial", sans-serif;
+        background: #f8f8f8;
+        color: #333;
+      }
+
+      .main {
+        padding: 50px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      .sign-in {
+        width: 90%;
+        max-width: 1000px;
+        background: #fff;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        overflow: hidden;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 40px;
+      }
+
+      .signin-content {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+      }
+
+      .signin-form {
+        flex: 1 1 50%;
+        padding-right: 30px;
+      }
+
+      .signin-form h2 {
+        font-size: 28px;
+        margin-bottom: 25px;
+        font-weight: 600;
+        color: #333;
+      }
+
+      .form-group {
+        display: flex;
+        align-items: center;
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        background: #fafafa;
+      }
+
+      .form-group i {
+        font-size: 20px;
+        margin-right: 10px;
+        color: #666;
+      }
+
+      .form-group input {
+        flex: 1;
+        border: none;
+        outline: none;
+        font-size: 16px;
+        background: transparent;
+        color: #333;
+      }
+
+      .form-group input::placeholder {
+        color: #aaa;
+      }
+
+      .form-button {
+        margin-top: 20px;
+      }
+
+      .form-submit {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        background-color: #4caf50;
+        color: #fff;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      .form-submit:hover {
+        background-color: #45a049;
+      }
+
+      .signin-image {
+        flex: 1 1 40%;
+        text-align: center;
+        padding-left: 30px;
+      }
+
+      .signin-image img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+      }
+
+      .signup-image-link {
+        display: inline-block;
+        margin-top: 20px;
+        color: #4caf50;
+        font-weight: bold;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .signup-image-link:hover {
+        color: #388e3c;
+      }
+
+      .forgot-password-link {
+        margin-top: 15px;
+      }
+
+      .forgot-password-link a {
+        color: #4caf50;
+        font-size: 14px;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .forgot-password-link a:hover {
+        color: #388e3c;
+      }
+
+      .social-login {
+        margin-top: 30px;
+      }
+
+      .social-label {
+        display: block;
+        text-align: center;
+        margin-bottom: 10px;
+        font-size: 14px;
+        color: #555;
+      }
+
+      .socials {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        padding: 0;
+      }
+
+      .socials li {
+        margin: 0 10px;
+      }
+
+      .socials a {
+        color: #fff;
+        background: #333;
+        padding: 10px 12px;
+        border-radius: 50%;
+        font-size: 16px;
+        transition: background 0.3s;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .socials a:hover {
+        background: #4caf50;
+      }
+
+      @media screen and (max-width: 768px) {
+        .sign-in {
+          flex-direction: column;
+          padding: 20px;
+        }
+
+        .signin-form,
+        .signin-image {
+          flex: 1 1 100%;
+          padding: 0;
+        }
+
+        .signin-image {
+          margin-top: 30px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <%- include('../partials/header') %>
+
+    <div class="main">
+      <!-- Sign in Form -->
+      <section class="sign-in">
+        <div class="signin-content">
+          <div class="signin-image">
+            <figure>
+              <img src="images/signin-image.jpg" alt="sign in image" />
+            </figure>
+            <a href="/register" class="signup-image-link">Create an account</a>
+          </div>
+
+          <div class="signin-form">
+            <h2 class="form-title">Sign in</h2>
+            <form
+              action="/login"
+              method="POST"
+              class="register-form"
+              id="login-form"
+            >
+              <div class="form-group">
+                <label for="email">
+                  <i class="zmdi zmdi-email"></i>
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="Enter Your Email"
+                />
+              </div>
+              <div class="form-group">
+                <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
+                <input
+                  type="password"
+                  name="password"
+                  id="your_pass"
+                  placeholder="Password"
+                />
+              </div>
+
+              <div class="form-group form-button">
+                <input
+                  type="submit"
+                  name="signin"
+                  id="signin"
+                  class="form-submit"
+                  value="Log in"
+                />
+              </div>
+            </form>
+
+            <div class="forgot-password-link">
+              <a href="/reset-password">Forgot password?</a>
+            </div>
+
+            <div class="social-login">
+              <span class="social-label">Or login with</span>
+              <ul class="socials">
+                <li>
+                  <a href="#"><i class="zmdi zmdi-facebook"></i></a>
+                </li>
+                <li>
+                  <a href="/github"><i class="zmdi zmdi-github"></i></a>
+                </li>
+                <li>
+                  <a href="/google"><i class="zmdi zmdi-google"></i></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <%- include('../partials/footer') %>
+  </body>
+</html>

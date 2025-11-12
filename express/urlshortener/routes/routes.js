@@ -15,10 +15,10 @@ const router = Router();
 //   };
 //   return res.render("report", { student });
 // });
-router.get("/", getShortenerPage);
+router.get("/", getShortenerPage); //work when page is loaded
 
-router.post("/", postURLShortner);
+router.post("/", postURLShortner); //work when form is submitted
 
-router.get("/:ShortCode", redirectToShort);
+router.get("/:ShortCode", redirectToShort); //work when short code is clicked
 
 export const shortenedRoutes = router;

@@ -6,6 +6,12 @@
     <title>URL Shortner</title>
   </head>
   <body>
+    <%- include('./partials/header.ejs') %>
+    <% if(isLoggedIn) { %>
+      <h1 style="width: auto; margin: 34px;">Welcome!</h1>
+    <% } else { %>
+      <h1>failes</h1>
+    <% } %>
     <div class="container">
       <h1>URL Shortner</h1>
       <form id="/" method="post">
@@ -21,7 +27,7 @@
       </form>
       <h2>Shortened URLs</h2>
       
-        <% Object.entries(links).map(([ShortCode , url]) => {%> <% const short =
+        <% links.map(({ShortCode , url}) => {%> <% const short =
         url.length >= 25 ? `${url.slice(0,30)}.....` : url %>
         <li>
           <a href="/<%= ShortCode %>" target="_blank">

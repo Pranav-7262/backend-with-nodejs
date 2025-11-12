@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Footer Example</title>
+
+    <!-- Material Design Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/material-design-iconic-font@2.2.0/dist/css/material-design-iconic-font.min.css"
+    />
+
+    <style>
+      /* Reset and base styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        height: 100%;
+        font-family: Arial, sans-serif;
+        background: #f8f8f8;
+        display: flex;
+        flex-direction: column;
+      }
+
+      main {
+        flex: 1;
+        padding: 20px;
+      }
+
+      footer {
+        background-color: #333;
+        color: #fff;
+        padding: 10px 0; /* Reduced from 20px */
+        font-size: 14px;
+      }
+
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .social-links a {
+        color: white;
+        margin-left: 12px;
+        font-size: 16px; /* Slightly smaller icons */
+        transition: color 0.3s;
+        text-decoration: none;
+      }
+
+      .social-links a:hover {
+        color: #4caf50;
+      }
+
+      @media screen and (max-width: 600px) {
+        .container {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+
+        .social-links {
+          margin-top: 8px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <footer>
+      <div class="container">
+        <div class="copyright">
+          &copy; <%= new Date().getFullYear(); %> Your Company. All rights
+          reserved.
+        </div>
+        <div class="social-links">
+          <a href="#"><i class="zmdi zmdi-facebook"></i></a>
+          <a href="#"><i class="zmdi zmdi-twitter"></i></a>
+          <a href="#"><i class="zmdi zmdi-instagram"></i></a>
+          <a href="#"><i class="zmdi zmdi-linkedin"></i></a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
